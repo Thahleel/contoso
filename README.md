@@ -22,7 +22,7 @@ POSTGRES_PORT=
 
 - Push the database up using `npm run db:push`
 
-- Seed the database using `npx run db:seed`
+- Seed the database using `npm run db:seed`
 
 - Start the API using `npm start`
 

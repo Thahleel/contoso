@@ -7,7 +7,7 @@ import helmet from "helmet";
 import compression from "compression";
 import cors from "cors";
 
-import routes from "./src/routes";
+import routers from "./src/routers";
 
 // Safely parse the PORT as a number, fallback to 5000
 const port: number = Number(process.env.PORT) || 5000;
@@ -33,13 +33,13 @@ app.use(compression());
 app.use(cors());
 app.options("*", cors());
 
-// Routes
-app.use("/api/instructors", routes.instructorRouter);
-app.use("/api/students", routes.studentRouter);
-app.use("/api/courses", routes.courseRouter);
-app.use("/api/enrolments", routes.enrolmentRouter);
-app.use("/api/tutors", routes.tutorRouter);
-app.use("/api/departments", routes.departmentRouter);
+// Routers
+app.use("/api/instructors", routers.instructorRouter);
+app.use("/api/students", routers.studentRouter);
+app.use("/api/courses", routers.courseRouter);
+app.use("/api/enrolments", routers.enrolmentRouter);
+app.use("/api/tutors", routers.tutorRouter);
+app.use("/api/departments", routers.departmentRouter);
 
 if (process.env.NODE_ENV !== "test") {
   app.listen(port, () => {
